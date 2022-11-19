@@ -1,13 +1,8 @@
 package model;
 
 import lombok.*;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
@@ -16,23 +11,29 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name="Items")
+@Table(name="items")
 public class Item {
 
     @Id
-    @Column(name="key")
-    private String key;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(name="category")
+    @Column
     private String category;
 
-    @Column(name="name")
+    @Column
     private String name;
 
-    @Column(name="district")
+    @Column
     private String district;
 
-    @Column(name="createDate")
+    @Column
     private LocalDateTime createDate;
 
+    public Item(String category, String name, String district, LocalDateTime createDate) {
+        this.category = category;
+        this.name = name;
+        this.district = district;
+        this.createDate = createDate;
+    }
 }

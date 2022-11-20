@@ -30,7 +30,7 @@ public class Item {
     @Column
     private LocalDateTime createDate;
 
-    @Column
+    @Column(length = 800)
     private String mainImage;
 
     @Column

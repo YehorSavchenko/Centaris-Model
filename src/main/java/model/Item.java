@@ -30,6 +30,9 @@ public class Item {
     @Column
     private LocalDateTime createDate;
 
+    @Column
+    private String mainImage;
+
     public Item(String category, String name, String district, LocalDateTime createDate) {
         this.category = category;
         this.name = name;

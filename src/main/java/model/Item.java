@@ -33,11 +33,20 @@ public class Item {
     @Column
     private String mainImage;
 
-    public Item(String category, String name, String district, LocalDateTime createDate, String mainImage) {
+    @Column
+    private String shortDesc;
+
+    public Item(String category,
+                String name,
+                String district,
+                LocalDateTime createDate,
+                String mainImage,
+                String shortDesc) {
         this.category = category;
         this.name = name;
         this.district = district;
         this.createDate = createDate;
         this.mainImage = mainImage;
+        this.shortDesc = shortDesc;
     }
 }
